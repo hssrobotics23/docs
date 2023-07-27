@@ -71,14 +71,7 @@ docker-compose up -d
 
 ### Debugging docker-compose.yml
  
-System differences (looking at you, Apple) may require small changes to `app-deployment/docker-compose.yml`. If port 5000 is used by your OS (MacOS Monterey), change the port mapping. 
-
-```
-ports:
-    - "5001:5000"
-```
-
-For AMD processors (Apple Silicon), set platform for `services`, `ap`, `ml-flow`, and `model-pipeline`.
+System differences (looking at you, Apple) may require small changes to `app-deployment/docker-compose.yml`. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For AMD processors (Apple Silicon), set platform for `services`, `ap`, `ml-flow`, and `model-pipeline`.
 
 ```
 platform: linux/amd64
