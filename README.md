@@ -33,4 +33,12 @@ For AMD processors (Apple Silicon), set platform for `services`, `ap`, `ml-flow`
 platform: linux/amd64
 ```
 
+### Opening the API client
+
+Now, make post requests to the local prediction API
+
+```
+http://localhost:80/predict
+```
+
 [rosetta]: https://collabnix.com/warning-the-requested-images-platform-linux-amd64-does-not-match-the-detected-host-platform-linux-arm64-v8/
