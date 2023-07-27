@@ -10,11 +10,15 @@ A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter no
 
 ## Visualize in Jupyter notebook
 
-Using [conda](https://docs.anaconda.com/anaconda/install/windows/) is easier!
+Please write your `OPENAI_KEY` to `docs/.env`. Using [conda](https://docs.anaconda.com/anaconda/install/windows/) is easier!
 
 ```
+git cloen https://github.com/hssrobotics23/docs.git
+cd docs
 conda create -n visualize python=3.9
 conda activate visualize
+pip install requests
+pip install python-dotenv
 pip install matplotlib numpy openai
 pip install jupyterlab opencv-python
 pip install git+https://github.com/JaidedAI/EasyOCR.git@f947eaa36a55adb306feac58966378e01cc67f85
