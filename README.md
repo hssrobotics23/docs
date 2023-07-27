@@ -78,8 +78,8 @@ docker ps -aq | xargs docker stop | xargs docker rm
 ```
 
 ### Debugging docker-compose.yml
- 
-This Docker container requires a machine with `25GiB` available storage. If you encounter a 500 error when making a `POST` request to `https://localhost:80`, your docker container may have trouble connecting to the `dgmd` service. For local testing, you can still configure to use the AWS instance of this service: search and replace in `docker-compose.yml`, replacing `http://dgmd_mlflow` with `http://34.192.30.136`. Further, system differences (looking at you, Apple) may cause issues. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For AMD v8 processors (ie, Apple M1), the following issue has not been resolved:
+
+`25GiB` storage is needed. If a `POST` request to `https://localhost:80` results in `HTTP 500`, then your may need to use the live `dgmd` service: search and replace in `docker-compose.yml`, replacing each `http://dgmd_mlflow` reference with the live URL `http://34.192.30.136`. Further, system differences (looking at you, Apple) may cause issues. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For AMD v8 processors (ie, Apple M1), the following issue has not been resolved:
 
 `The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8)`
 
