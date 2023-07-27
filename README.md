@@ -20,7 +20,7 @@ docker-compose up -d
 
 ### Debugging docker-compose.yml
  
-If port 5000 is used by your OS (MacOS Monterey), change the port mapping. 
+System differences (looking at you, Apple) may require small changes to `app-deployment/docker-compose.yml`. If port 5000 is used by your OS (MacOS Monterey), change the port mapping. 
 
 ```
 ports:
