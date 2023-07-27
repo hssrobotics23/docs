@@ -60,7 +60,7 @@ git clone git@github.com:hssrobotics23/mlflow.git
 git clone git@github.com:hssrobotics23/api.git
 ```
 
-Now, Run `aws configure` if not already logged-in to AWS.
+Now, Run `aws configure` if not already logged-in to AWS. If running on Unix/Linux/MacOS, run `lsof -i :80` and then `kill` any existing process running on port `80`.
 
 ```
 mkdir app-deployment/secrets
@@ -68,6 +68,8 @@ cp ~/.aws/credentials app-deployment/secrets/aws_credentials
 cd app-deployment
 docker-compose up -d
 ```
+
+Now running `lsof -i :80` should show the one API server running on port 80.
 
 When you're done testing locally, stop all docker containers:
 
@@ -77,11 +79,9 @@ docker ps -aq | xargs docker stop | xargs docker rm
 
 ### Debugging docker-compose.yml
  
-System differences (looking at you, Apple) may require small changes to `app-deployment/docker-compose.yml`. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For AMD processors (Apple Silicon), set platform for `services`, `ap`, `ml-flow`, and `model-pipeline`.
+System differences (looking at you, Apple) may cause issues. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For ARM v8 processors (ie, Apple M1), the following issue has not been resolved:
 
-```
-platform: linux/amd64
-```
+`The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8)`
 
 ### Opening the API client
 
