@@ -69,6 +69,12 @@ cd app-deployment
 docker-compose up -d
 ```
 
+When you're done testing locally, stop all docker containers:
+
+```
+docker ps -aq | xargs docker stop | xargs docker rm
+```
+
 ### Debugging docker-compose.yml
  
 System differences (looking at you, Apple) may require small changes to `app-deployment/docker-compose.yml`. If port 5000 is used by your OS (MacOS Monterey), [disable Airplay in System Preferences / Sharing](https://developer.apple.com/forums/thread/682332). For AMD processors (Apple Silicon), set platform for `services`, `ap`, `ml-flow`, and `model-pipeline`.
