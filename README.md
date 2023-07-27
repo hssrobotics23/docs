@@ -13,7 +13,7 @@ A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter no
 Please write your `OPENAI_KEY` to `docs/.env`. Using [conda](https://docs.anaconda.com/anaconda/install/windows/) is easier!
 
 ```
-git cloen https://github.com/hssrobotics23/docs.git
+git clone https://github.com/hssrobotics23/docs.git
 cd docs
 conda create -n visualize python=3.9
 conda activate visualize
