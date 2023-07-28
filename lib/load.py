@@ -1,0 +1,31 @@
+import cv2
+import json
+import requests
+import numpy as np
+
+DALLEE_IMAGE_URL = (
+    "https://dgmd-s17-assets.s3.amazonaws.com/train/generated-text-images/"
+)
+
+def index_urls(index, num_read):
+
+    with open(index, 'r') as rf:
+        data = json.load(rf)
+
+    sources = data["images"]
+    subset = sources[:num_read]
+    return sources if num_read < 0 else subset
+
+
+def gen_images(src_subset):
+
+    for src in src_subset:
+
+        image_url = DALLEE_IMAGE_URL + src["file_name"]
+        resp = requests.get(image_url, stream=True).raw
+        arr = np.asarray(bytearray(resp.read()), dtype="uint8")
+        decoded = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+        if decoded is None:
+            print('Unable to load', image_url)
+            continue
+        yield decoded[:,:,::-1]
