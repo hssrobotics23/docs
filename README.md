@@ -5,7 +5,7 @@ This repository describes the steps to:
 1) [Run a Jupyter notebook](#visualize-in-jupyter-notebook) with access to our public API
 2) Reproduce that public API [locally with Docker](#reproducing-locally-with-docker)
 
-A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter notebook](#visualize-in-jupyter-notebook). This notebook uses EasyOCR on the synthetic images, measuring text prediction accuracy and the precision of the bounding boxes. The Jupyter notebook concludes with a demo of recipe geneation by passing the recognized spices to OpenAI. To reproduce this work, you must have your own OpenAI API key.
+A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter notebook](#visualize-in-jupyter-notebook). This notebook uses EasyOCR on the synthetic images, measuring text prediction accuracy and the precision of the bounding boxes. The Jupyter notebook concludes with a demo of recipe geneation by passing the recognized spices to OpenAI. When contributing to this repository, please run `Restart Kernel and Clear Outputs of All Cells…` before commiting in order to avoid needless merge conflicts.
 
 
 ## Visualize in Jupyter notebook
@@ -83,14 +83,11 @@ docker ps -aq | xargs docker stop | xargs docker rm
 
 `The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8)`
 
-It is also possible to run the docker container on a remote server, then test privately with `sudo ssh -L 80:localhost:80 root@example.com` to access the server at `localhost`. I opened all ports:
+It is also possible to run the docker container on a remote server, then test privately with `sudo ssh -L 80:localhost:80 root@example.com` to access the server at `localhost`. Ensure that port `80` is open for http, such as `sudo ufw allow from any to any port 80` on Ubuntu.
 
-```
-sudo ufw allow http
-sudo ufw allow from any to any port 80
-sudo ufw allow from any to any port 5000
-sudo ufw allow from any to any port 8080
-```
+### Development
+
+The Docker image repositories automatically update the docker images when pushed to the `main` branch on GitHub. Once the image has been built (check GitHub Actions for the status), run `docker images -q dgmd_apis`, for example, and `docker-compose up -d` to relaunch the updated docker image. This is only required when changing dependencies in the `requirements.txt`. All other changes to the code itself are watched continously and updtated live at runtime.
 
 ### Opening the API client
 
