@@ -10,7 +10,7 @@ A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter no
 
 ## Visualize in Jupyter notebook
 
-Please write your `OPENAI_KEY` to `docs/.env`. Using [conda](https://docs.anaconda.com/anaconda/install/windows/) is easier!
+Create a `conada` environment and install `pip` dependencies.
 
 ```
 git clone https://github.com/hssrobotics23/docs.git
@@ -18,36 +18,11 @@ cd docs
 conda create -n visualize python=3.9
 conda activate visualize
 pip install requests
-pip install python-dotenv
-pip install matplotlib numpy openai
+pip install matplotlib numpy
 pip install jupyterlab opencv-python
-pip install git+https://github.com/JaidedAI/EasyOCR.git@f947eaa36a55adb306feac58966378e01cc67f85
-python3 -m pip install --force-reinstall -v "Pillow==9.5.0"
 conda install nb_conda_kernels
 python3 -m jupyterlab
 ```
-
-Here are the `pyenv` instructions:
-
-```
-pyenv install 3.9.17
-pyenv local 3.9.17
-python3 -m pip install jupyterlab numpy
-python3 -m pip install opencv-python
-python3 -m pip install matplotlib openai
-python3 -m pip install git+https://github.com/JaidedAI/EasyOCR.git@f947eaa36a55adb306feac58966378e01cc67f85
-python3 -m pip install --force-reinstall -v "Pillow==9.5.0"
-python3 -m jupyterlab
-```
-
-### Running the full notebook
-
-To run the notebook to completion, you'll need:
-
-- the included `merged.json`, with an index to the `s3` demo images
-- an openai API key, [available when logged in here](https://platform.openai.com/account/api-keys)
-
-Note, you may follow [these steps](https://albertauyeung.github.io/2020/08/17/pyenv-jupyter.html/) to enable `pyenv` within `jupyterlab`. Note, the git install of EasyOCR is needed until the resolution of [this EasyOCR Issue](https://github.com/JaidedAI/EasyOCR/issues/1077)
 
 ## Reproducing locally with Docker 
 

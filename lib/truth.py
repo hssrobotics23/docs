@@ -21,10 +21,10 @@ def gen_truth(sources):
         real_words = list(src_to_words(src))
         real_text = ' '.join(real_words)
 
-    yield {
-        "text": real_text,
-        "box": real_box
-    }
+        yield {
+            "text": real_text,
+            "box": real_box
+        }
 
 def to_truth(sources):
     return list(gen_truth(sources))
