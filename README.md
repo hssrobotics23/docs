@@ -87,7 +87,7 @@ It is also possible to run the docker container on a remote server, then test pr
 
 ### Development
 
-The Docker image repositories automatically update the docker images when pushed to the `main` branch on GitHub. Once the image has been built (check GitHub Actions for the status), run `docker images -q dgmd_apis`, for example, and `docker-compose up -d` to relaunch the updated docker image. This is only required when changing dependencies in the `requirements.txt`. All other changes to the code itself are watched continously and updtated live at runtime.
+The Docker image repositories automatically update the docker images when pushed to the `main` branch on GitHub. Once the image has been built (check GitHub Actions for the status), run `docker image list` to see the relevant image ID, then remove the existing image with `docker image rm [ID]`. Next, run `docker-compose up -d` to relaunch the updated docker image. This is only required when changing dependencies in the `requirements.txt`. All other changes to the code itself are watched continously and updtated live at runtime.
 
 ### Opening the API client
 
