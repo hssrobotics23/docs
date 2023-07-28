@@ -2,13 +2,16 @@
 
 This repository describes the steps to:
 
-1) [Run a Jupyter notebook](#visualize-in-jupyter-notebook) with access to our public API
+1) [Run Jupyter notebooks](#included-notebooks) with access to our public API
 2) Reproduce that public API [locally with Docker](#reproducing-locally-with-docker)
 
-A pre-generated dataset is publicly hosted on AWS, [for a demo in the jupyter notebook](#visualize-in-jupyter-notebook). This notebook uses EasyOCR on the synthetic images, measuring text prediction accuracy and the precision of the bounding boxes. The Jupyter notebook concludes with a demo of recipe geneation by passing the recognized spices to OpenAI. When contributing to this repository, please run `Restart Kernel and Clear Outputs of All Cells…` before commiting in order to avoid needless merge conflicts.
+A pre-generated dataset is publicly hosted on AWS, [for a demo in jupyter notebook](#included-notebooks). The notebooks use a custom trained classifier model + EasyOCR on the synthetic images. The `performance` notebook measures text prediction accuracy and bounding box precision. Both Jupyter notebooks conclude with a demo of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file.
 
+## Included notebooks
 
-## Visualize in Jupyter notebook
+- In `visualize.ipynb`, view a [general visualization demo](#visualize-in-jupyter-notebook)
+- In `performance.ipynb`, view a [performance demo](#performance-in-jupyter-notebook)
+
 
 Create a `conada` environment and install `pip` dependencies.
 
@@ -17,12 +20,18 @@ git clone https://github.com/hssrobotics23/docs.git
 cd docs
 conda create -n visualize python=3.9
 conda activate visualize
-pip install requests
-pip install matplotlib numpy
-pip install jupyterlab opencv-python
 conda install nb_conda_kernels
+pip install -r requirements.txt
 python3 -m jupyterlab
 ```
+
+## Visualize in Jupyter notebook
+
+Include your own image `jpg` or `png` files in the `inputs` directory.
+
+## Performance in Jupyter notebook
+
+Measure performance on the synthetic spice image dataset.
 
 ## Reproducing locally with Docker 
 
@@ -66,7 +75,7 @@ The Docker image repositories automatically update the docker images when pushed
 
 ### Opening the API client
 
-Now, make post requests to the local prediction API
+Now, make post requests to the local prediction API, or run the notebooks with `USE_AWS_AI = False`.
 
 ```
 http://localhost:80/predict
