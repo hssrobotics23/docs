@@ -44,7 +44,7 @@ python3 -m jupyterlab
 
 To run the notebook to completion, you'll need:
 
-- a local copy of `merged.json`, with an index to the `s3` demo images
+- the included `merged.json`, with an index to the `s3` demo images
 - an openai API key, [available when logged in here](https://platform.openai.com/account/api-keys)
 
 Note, you may follow [these steps](https://albertauyeung.github.io/2020/08/17/pyenv-jupyter.html/) to enable `pyenv` within `jupyterlab`. Note, the git install of EasyOCR is needed until the resolution of [this EasyOCR Issue](https://github.com/JaidedAI/EasyOCR/issues/1077)
