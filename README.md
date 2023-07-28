@@ -27,11 +27,11 @@ python3 -m jupyterlab
 
 ## Visualize in Jupyter notebook
 
-Include your own image `jpg` or `png` files in the `inputs` directory.
+Run `python3 -m jupyterlab`, and navigate to `visualize.ipynb`. Include your own image `jpg` or `png` files in the `inputs` directory.
 
 ## Performance in Jupyter notebook
 
-Measure performance on the synthetic spice image dataset.
+Run `python3 -m jupyterlab`, and navigate to `performance.ipynb`. Measure performance on the synthetic spice image dataset.
 
 ## Reproducing locally with Docker 
 
