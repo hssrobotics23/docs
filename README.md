@@ -2,6 +2,9 @@
 
 ### Project Repositories
 
+- [Generation of Synthetic Data](https://github.com/hssrobotics23/to-spice-images)
+- 
+
 ### This Repository
 
 Both syntehtic and scraped data are hosted publicly on AWS, [for jupyter notebook demos](#included-notebooks). The notebooks use the API to run our classifier model and EasyOCR on the images. The `example_usage` notebook gives the most succinct API usage, with no dependencies. The `performance` notebook measures precision and recall on the scraped image dataset. The `visualize` notebook measures bounding box accuracy on synthetic images. Both the `visualize` and `example_usage` notebooks conclude with demonstrations of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file. View the [image generation documentation](https://github.com/hssrobotics23/to-spice-images)
