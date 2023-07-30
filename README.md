@@ -28,7 +28,7 @@ python3 -m jupyterlab
 
 ## Core API usage
 
-Run `python3 -m jupyterlab`, and navigate to `example_usage.ipynb`. This q
+Run `python3 -m jupyterlab`, and navigate to `example_usage.ipynb`. This runs the API pipeline on `example_image.jpeg`.
 
 ## Visualize in Jupyter notebook
 
