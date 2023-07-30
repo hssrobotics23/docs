@@ -2,8 +2,8 @@
 
 ### Project Repositories
 
-- [Generation of Synthetic Data](https://github.com/hssrobotics23/to-spice-images)
-- 
+- [Scraping real spice images](https://github.com/hssrobotics23/image_dl)
+- [Generation of Synthetic images](https://github.com/hssrobotics23/to-spice-images)
 
 ### This Repository
 
