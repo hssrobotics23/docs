@@ -1,11 +1,11 @@
 # HSS Robotics 2023
 
-This repository describes the steps to:
+This repository describes two options:
 
 1) [Run Jupyter notebooks](#included-notebooks) with access to our public API
 2) Reproduce that public API [locally with Docker](#reproducing-locally-with-docker)
 
-A pre-generated dataset is publicly hosted on AWS, [for a demo in jupyter notebook](#included-notebooks). The notebooks use a custom trained classifier model + EasyOCR on the synthetic images. The `performance` notebook measures text prediction accuracy and bounding box precision. Both Jupyter notebooks conclude with a demo of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file.
+A pre-generated dataset is publicly hosted on AWS, [for a demo in jupyter notebook](#included-notebooks). The notebooks use a custom trained classifier model + EasyOCR on the synthetic images. The `performance` notebook measures text prediction accuracy and bounding box precision. Both Jupyter notebooks conclude with a demo of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file. View the [image generation documentation](https://github.com/hssrobotics23/to-spice-images)
 
 ## Included notebooks
 
