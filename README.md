@@ -3,9 +3,9 @@
 ### Project Repositories
 
 - [The OCR + classifier API implementaion](https://github.com/hssrobotics23/api)
-- [Scraping real spice images](https://github.com/hssrobotics23/image_dl)
 - [Training pipeline for classifier](https://github.com/hssrobotics23/model_training_pipeline)
 - [Generation of Synthetic images](https://github.com/hssrobotics23/to-spice-images)
+- [Scraping real spice images](https://github.com/hssrobotics23/image_dl)
 - [Deployment of FastAPI](https://github.com/hssrobotics23/app-deployment)
 - [ML flow container](https://github.com/hssrobotics23/mlflow)
   
