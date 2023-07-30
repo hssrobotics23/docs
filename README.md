@@ -5,7 +5,7 @@
 - [Scraping real spice images](https://github.com/hssrobotics23/image_dl)
 - [Generation of Synthetic images](https://github.com/hssrobotics23/to-spice-images)
 - [Deployment of FastAPI API](https://github.com/hssrobotics23/app-deployment)
-- [The FastAPI API](https://github.com/hssrobotics23/app-deployment)
+- [The FastAPI API](https://github.com/hssrobotics23/api)
   
 ### This Repository
 
