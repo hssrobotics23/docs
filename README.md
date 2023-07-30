@@ -5,8 +5,8 @@
 - [Scraping real spice images](https://github.com/hssrobotics23/image_dl)
 - [Training pipeline for classifier](https://github.com/hssrobotics23/model_training_pipeline)
 - [Generation of Synthetic images](https://github.com/hssrobotics23/to-spice-images)
-- [Deployment of FastAPI API](https://github.com/hssrobotics23/app-deployment)
-- [The FastAPI API](https://github.com/hssrobotics23/api)
+- [Deployment of FastAPI](https://github.com/hssrobotics23/app-deployment)
+- [The FastAPI implementaion](https://github.com/hssrobotics23/api)
 - [ML flow container](https://github.com/hssrobotics23/mlflow)
   
 ### This Repository
