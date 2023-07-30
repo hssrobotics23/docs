@@ -1,6 +1,6 @@
 # HSS Robotics 2023
 
-Both syntehtic and scraped data are hosted publicly on AWS, [for jupyter notebook demos](#included-notebooks). The notebooks use the API to run our classifier model and EasyOCR on the images. The `performance` notebook measures precision and recall on the scraped. Both Jupyter notebooks conclude with a demo of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file. View the [image generation documentation](https://github.com/hssrobotics23/to-spice-images)
+Both syntehtic and scraped data are hosted publicly on AWS, [for jupyter notebook demos](#included-notebooks). The notebooks use the API to run our classifier model and EasyOCR on the images. The `example_usage` notebook gives the most succinct API usage, with no dependencies. The `performance` notebook measures precision and recall on the scraped. The `visualize` notebook measures bounding box accuracy on synthetic images. Both the `visualize` and `example_usage` notebooks conclude with demonstrations of recipe geneation by passing the recognized spices to OpenAI. They connect to a local or cloud backend depending on the `USE_AWS_AI` flag at the top of each file. View the [image generation documentation](https://github.com/hssrobotics23/to-spice-images)
 
 This page provides two types of documentation:
 
@@ -9,11 +9,12 @@ This page provides two types of documentation:
 
 ## Included notebooks
 
+- In `example_usage.ipynb`, view the [core api usage](#core-api-usage)
 - In `visualize.ipynb`, view a [general visualization demo](#visualize-in-jupyter-notebook)
 - In `performance.ipynb`, view a [performance demo](#performance-in-jupyter-notebook)
 
 
-Create a `conada` environment and install `pip` dependencies.
+For all but `example_usage.ipynb`, create a `conada` environment and install `pip` dependencies.
 
 ```
 git clone https://github.com/hssrobotics23/docs.git
@@ -25,13 +26,17 @@ pip install -r requirements.txt
 python3 -m jupyterlab
 ```
 
+## Core API usage
+
+Run `python3 -m jupyterlab`, and navigate to `example_usage.ipynb`. This q
+
 ## Visualize in Jupyter notebook
 
-Run `python3 -m jupyterlab`, and navigate to `visualize.ipynb`. Include your own image `jpg` or `png` files in the `inputs` directory.
+Run `python3 -m jupyterlab`, and navigate to `visualize.ipynb`. This runs on the synthetic images hosted on AWS, indexed in `merged.json`.
 
 ## Performance in Jupyter notebook
 
-Run `python3 -m jupyterlab`, and navigate to `performance.ipynb`. Measure performance on the synthetic spice image dataset.
+Run `python3 -m jupyterlab`, and navigate to `performance.ipynb`. This runs on the scraped images hostod on AWS, indexed in `images.json`.
 
 ## Reproducing Data used
 
