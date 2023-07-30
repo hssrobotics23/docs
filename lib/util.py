@@ -18,13 +18,15 @@ def setup_plt(keep_ticks=False):
         ax.set_xticks([])
         ax.set_yticks([])
 
-def setup_viz_box(result_text, real_text):
-    correct = result_text == real_text
+def setup_viz_box(res_match, res_lines, rea_text):
+    res_text = " ".join(res_lines)
+    correct = res_text == rea_text
     sep = "==" if correct else "≠"
     font = { "fontsize": 30 }
     title = (
-        f'{result_text} {sep} {real_text}'
-    )
+        f'class: {res_match}\n'
+        f'{" ".join(res_lines)}' f'{sep} {rea_text}'
+    )   
     plt.title(title, **font)
 
     predicted = ({
@@ -48,9 +50,11 @@ def draw_viz_box(label,boxes,props):
         xs += (xs[0],)
         ys += (ys[0],)
         max_k = len(props) - 1
-        for (ki, kw) in enumerate(props):
+        for (ki, prop) in enumerate(props):
+            kw = { ** prop }
             kw["label"] = (
                 label if bi == 0 and ki == max_k else f'_{bi}_{ki}'
             )
             fmt = kw.pop("fmt", None)
             plt.plot(xs,ys, fmt, **kw)
+            plt.fill(xs,ys)

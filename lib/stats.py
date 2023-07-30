@@ -14,7 +14,7 @@ def gen_ious(images, truth, results):
         for box in rea["box"]:
             cv2.fillPoly(rea_canvas, pts =[np.array(box)], color =(1))
         # Render the result bounds
-        for box in [res["ocr_all_results"][0]["box"]]:
+        for box in [r["box"] for r  in res["ocr_all_results"]]:
             cv2.fillPoly(res_canvas, pts =[np.array(box)], color =(1))
 
         # Calculate the union
